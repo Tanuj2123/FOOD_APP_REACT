@@ -1,0 +1,163 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const Header = ()=>{
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNl1WcEr1Wv0VlscNKDZKcM-x0WkVFKNn2Zg&s"></img>
+            </div>
+            <h1 className="nav-title">Your food App</h1>
+            <div className="nav-items">
+                <ul className="nav-list">
+                    <li className="list-item">Home</li>
+                    <li className="list-item">About Us</li>
+                    <li className="list-item">Contact us</li>
+                    <li className="cart-item"><img className="cart-image" src="https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg"></img></li>
+                </ul>
+            </div>
+        </div>
+    );
+};
+
+const resList = [
+  {
+    id: 1,
+    imgSrc: "https://media.istockphoto.com/id/1410130688/photo/mutton-biryani-served-in-a-golden-dish-isolated-on-dark-background-side-view-indian-food.jpg?s=612x612&w=0&k=20&c=ueFrghYZuKAty-rFVe5dtMtNIbn0jaUsSvCUwTVOmd8=",
+    resName: "Hotel Muntaj",
+    cuisine: "Hyderabadi Biryani",
+    rating: "4.9 ⭐",
+    deliveryTime: "26 mins",
+    price: "₹350 for one",
+  },
+  {
+    id: 2,
+    imgSrc: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800",
+    resName: "Pizza Palace",
+    cuisine: "Italian Pizza",
+    rating: "4.7 ⭐",
+    deliveryTime: "30 mins",
+    price: "₹450 for one",
+  },
+  {
+    id: 3,
+    imgSrc: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800",
+    resName: "Burger Hub",
+    cuisine: "Cheese Burger",
+    rating: "4.6 ⭐",
+    deliveryTime: "22 mins",
+    price: "₹250 for one",
+  },
+  {
+    id: 4,
+    imgSrc: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=800",
+    resName: "Sushi World",
+    cuisine: "Japanese Sushi",
+    rating: "4.8 ⭐",
+    deliveryTime: "35 mins",
+    price: "₹700 for one",
+  },
+  {
+    id: 5,
+    imgSrc: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800",
+    resName: "Dosa Delight",
+    cuisine: "South Indian",
+    rating: "4.5 ⭐",
+    deliveryTime: "18 mins",
+    price: "₹180 for one",
+  },
+  {
+    id: 6,
+    imgSrc: "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800",
+    resName: "Punjabi Dhaba",
+    cuisine: "North Indian Thali",
+    rating: "4.8 ⭐",
+    deliveryTime: "28 mins",
+    price: "₹320 for one",
+  },
+  {
+    id: 7,
+    imgSrc: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800",
+    resName: "Pasta Point",
+    cuisine: "Creamy Alfredo Pasta",
+    rating: "4.4 ⭐",
+    deliveryTime: "24 mins",
+    price: "₹380 for one",
+  },
+  {
+    id: 8,
+    imgSrc: "https://images.unsplash.com/photo-1604908176997-4311d4c3f8dd?w=800",
+    resName: "Taco Fiesta",
+    cuisine: "Mexican Tacos",
+    rating: "4.6 ⭐",
+    deliveryTime: "27 mins",
+    price: "₹300 for one",
+  },
+  {
+    id: 9,
+    imgSrc: "https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800",
+    resName: "Chinese Express",
+    cuisine: "Hakka Noodles",
+    rating: "4.5 ⭐",
+    deliveryTime: "20 mins",
+    price: "₹260 for one",
+  },
+  {
+    id: 10,
+    imgSrc: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800",
+    resName: "Sweet Treats",
+    cuisine: "Cakes & Desserts",
+    rating: "4.9 ⭐",
+    deliveryTime: "16 mins",
+    price: "₹200 for one",
+  },
+];
+
+
+
+
+
+const ResCard  = (props)=>{
+    const {resData} = props;
+    const {imgSrc,resName,cuisine,rating,deliveryTime,price} = resData;
+    return (
+        <div className="res-card">
+            <img className="res-logo" alt="res-logo" src={imgSrc}></img>
+            <h2>{resName}</h2>
+            <h4>{cuisine}</h4>
+            <h4>{rating}</h4>
+            <h4> {deliveryTime} </h4>
+            <h4>{price}</h4>
+        </div>
+    )
+}
+
+const Body = ()=>{
+    return (
+        <div className="body">
+            <div className="search">search</div>
+            <div className="res-container">
+                {
+                    resList.map((restuarant) =>(
+                        <ResCard key={restuarant.id} resData={restuarant}/>
+                    ))
+                }
+            </div>
+        </div>
+    )
+}
+
+const AppLayout = () =>{
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+        </div>
+    );
+};
+
+ 
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<AppLayout/>);
