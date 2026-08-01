@@ -1,6 +1,8 @@
-
+import { useState } from "react";
 
 const Header = ()=>{
+
+    const [loginBtn,setloginBtn] = useState("login");
     return (
         <div className="header">
             <div className="logo-container">
@@ -13,6 +15,11 @@ const Header = ()=>{
                     <li className="list-item">About Us</li>
                     <li className="list-item">Contact us</li>
                     <li className="cart-item"><img className="cart-image" src="https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg"></img></li>
+                    <li><button className="login"
+                                onClick={()=>{
+                                    loginBtn==="login"?setloginBtn("logout"):setloginBtn("login");
+                                }}
+                    >{loginBtn}</button></li>
                 </ul>
             </div>
         </div>
