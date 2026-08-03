@@ -146,5 +146,13 @@ body{
     border-radius: 8px;
 }
 
+/* no content styling*/
+.no-content-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
