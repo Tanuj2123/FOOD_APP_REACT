@@ -148,9 +148,27 @@ body{
 
 
 /* About Us Page*/
-.about-div{
+
+
+.user-card{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 9px;
+    flex-wrap: wrap;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color:#1E1E24;
+}
+
+.user-card:hover{
+    border: 3px solid white;
+    cursor: pointer; 
+}
+
+.cnt-increase-btn{
+    width: 10%;
+    padding: 10px;
+    border-radius: 9px;
 }
 
 /* Contact us Page*/

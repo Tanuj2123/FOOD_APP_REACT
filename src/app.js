@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 
 
+
 const AppLayout = () =>{
     return (
         <div className="app">
