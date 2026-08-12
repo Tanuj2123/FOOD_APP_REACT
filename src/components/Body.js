@@ -1,6 +1,8 @@
 import ResCard from "./ResCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = ()=>{
 
@@ -19,6 +21,10 @@ const Body = ()=>{
         setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus === false){
+        return <h1>You are offline! Please Check Your Internet Connection</h1>
+    }
     
 
     if(listOfRestaurants.length === 0){
@@ -62,7 +68,7 @@ const Body = ()=>{
                     
                     filteredRestaurants.map((restaurant) =>{
                         return (
-                        <ResCard key={restaurant.info.id} resData={restaurant}/>
+                        <Link className="res-card-link" key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><ResCard resData={restaurant}/></Link>
                     ) } )
                 }
             </div>

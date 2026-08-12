@@ -59,6 +59,7 @@ body{
 
 .res-card{
     margin: 80px;
+    color: #fff;
     background-color:#1E1E24;
     width: 300px;
     padding: 5px;
@@ -69,6 +70,10 @@ body{
 .res-card:hover{
     border: 3px solid white;
     cursor: pointer; 
+}
+
+.res-card-link{
+    text-decoration: none;
 }
 
 .search{
@@ -184,10 +189,10 @@ body{
 }
 
 /* links */
-.home-link,.about-link,.contact-link{
+.home-link,.about-link,.contact-link,.grocery-link{
     text-decoration: none;
     color: white;
 }
-.home-link:hover,.about-link:hover,.contact-link:hover{
+.home-link:hover,.about-link:hover,.contact-link:hover,.grocery-link:hover{
     opacity: 0.7;
 }

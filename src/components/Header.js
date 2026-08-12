@@ -16,6 +16,7 @@ const Header = ()=>{
                     <li className="list-item"><Link className="home-link" to="/">Home</Link></li>
                     <li className="list-item"><Link  className="about-link" to="/about">About Us</Link></li>
                     <li className="list-item"> <Link className="contact-link" to="/contact">Contact</Link> </li>
+                    <li className="list-item"><Link className="grocery-link" to="/grocery">Grocery</Link></li>
                     <li className="cart-item"><img className="cart-image" src={CART_IMAGE_URL}></img></li>
                     <li><button className="login"
                                 onClick={()=>{
