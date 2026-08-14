@@ -35,12 +35,12 @@ const Body = ()=>{
 
 
     return (
-        <div className="body">
-            <div className="search-filter">
-                <input type="text" className="search-input" value={searchValue} onChange={(e)=>{
+        <div className="bg-gray-50 text-gray-900">
+            <div className="flex justify-center">
+                <input type="text" className="w-96 m-3 p-1 rounded-xl border-2 border-black border-solid" value={searchValue} onChange={(e)=>{
                     setSearchvalue(e.target.value);
                 }}></input>
-                <button className="search-btn" onClick={()=>{
+                <button className="rounded-xl px-4 cursor-pointer bg-black text-white" onClick={()=>{
                     const filteredRes = listOfRestaurants.filter((res)=>{
                         return res.info.name.toLowerCase().includes(searchValue.toLowerCase());
                     });
@@ -50,8 +50,8 @@ const Body = ()=>{
                     setFilteredRestaurants(filteredRes);
                 }}>Search</button>
             </div>
-            <div className="btn-filter">
-                <button className="filter-btn" onClick={()=>{
+            <div className="flex justify-center">
+                <button className="m-4 rounded-xl p-2 text-white bg-black" onClick={()=>{
                     const filteredRes = listOfRestaurants.filter(
                         (res) => res.info.avgRating>4.3
                     );
@@ -63,7 +63,7 @@ const Body = ()=>{
                     Top Rated Restaurants
                 </button>
             </div>
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {   
                     
                     filteredRestaurants.map((restaurant) =>{
@@ -73,7 +73,7 @@ const Body = ()=>{
                 }
             </div>
         </div>
-    )    
+    )
 }
 
 export default Body;
