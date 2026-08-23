@@ -6,3 +6,4 @@ export const LOGO_IMAGE_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:A
 export const CART_IMAGE_URL = "https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg";
 
 export const MENU_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.7429567&lng=83.3192061&restaurantId=";
+

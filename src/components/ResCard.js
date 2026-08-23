@@ -16,4 +16,27 @@ const ResCard  = (props)=>{
     )
 }
 
+export const WithClosedLabel = (ResCard)=>{
+
+    return (props)=>{
+        return (
+            <div className="relative">
+                <label className="absolute top-2 left-2 z-10" >Closed</label>
+                <ResCard {...props}/>
+            </div>
+        )
+    }
+}
+
+export const WithOpenedLabel = (ResCard)=>{
+
+    return (props)=>{
+        return (
+            <div className="relative">
+                <label className="absolute top-2 left-2 z-10">Opened</label>
+                <ResCard {...props}/>
+            </div>
+        )
+    }
+}
 export default ResCard;

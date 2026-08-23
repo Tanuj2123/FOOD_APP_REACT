@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard,{WithClosedLabel,WithOpenedLabel} from "./ResCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -9,6 +9,9 @@ const Body = ()=>{
     let [listOfRestaurants,setListOfRestaurants] = useState([]);
     let [filteredRestaurants,setFilteredRestaurants] = useState([]);
     let [searchValue,setSearchvalue] = useState("");
+
+    const ClosedResCard = WithClosedLabel(ResCard);
+    const OpenedResCard = WithOpenedLabel(ResCard);
 
     useEffect(()=>{
         fetchData();
@@ -67,8 +70,11 @@ const Body = ()=>{
                 {   
                     
                     filteredRestaurants.map((restaurant) =>{
+                        console.log(restaurant.info?.availability?.opened);
                         return (
-                        <Link className="res-card-link" key={restaurant.info.id} to={"/restaurant/"+restaurant.info.id}><ResCard resData={restaurant}/></Link>
+                        <Link className="res-card-link" key={restaurant.info.id} to={"/restaurant"}>
+                            {restaurant.info?.availability?.opened?<OpenedResCard resData={restaurant}/>:<ClosedResCard resData={restaurant}/>}
+                        </Link>
                     ) } )
                 }
             </div>
