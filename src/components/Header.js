@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { LOGO_IMAGE_URL,CART_IMAGE_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = ()=>{
+
+    const cartItems = useSelector((store)=> store.cart.items);
 
     const [loginBtn,setloginBtn] = useState("login");
     return (
@@ -17,7 +20,7 @@ const Header = ()=>{
                     <li className="m-4"><Link  className="about-link" to="/about">About Us</Link></li>
                     <li className="m-4"> <Link className="contact-link" to="/contact">Contact</Link> </li>
                     <li className="m-4"><Link className="grocery-link" to="/grocery">Grocery</Link></li>
-                    <li className=""><img className="w-20" src={CART_IMAGE_URL}></img></li>
+                    <li className="m-4">🛒-{cartItems.length}</li>
                     <li><button className="mt-4"
                                 onClick={()=>{
                                     loginBtn==="login"?setloginBtn("logout"):setloginBtn("login");

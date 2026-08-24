@@ -18,7 +18,7 @@ const Body = ()=>{
     },[]);
 
     const fetchData = async ()=>{
-        const data = await fetch("https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7429567&lng=83.3192061&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.7429567&lng=83.3192061&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
         const json = await data.json();
         setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -29,7 +29,7 @@ const Body = ()=>{
         return <h1>You are offline! Please Check Your Internet Connection</h1>
     }
     
-
+    
     if(listOfRestaurants.length === 0){
         return (
             <Shimmer/>
