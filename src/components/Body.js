@@ -70,7 +70,6 @@ const Body = ()=>{
                 {   
                     
                     filteredRestaurants.map((restaurant) =>{
-                        console.log(restaurant.info?.availability?.opened);
                         return (
                         <Link className="res-card-link" key={restaurant.info.id} to={"/restaurant"}>
                             {restaurant.info?.availability?.opened?<OpenedResCard resData={restaurant}/>:<ClosedResCard resData={restaurant}/>}
