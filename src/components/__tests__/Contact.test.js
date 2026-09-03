@@ -10,7 +10,7 @@ describe("contact us page test cases",()=>{
     const heading = screen.getByRole("heading");
 
     expect(heading).toBeInTheDocument()
-    })
+    });
 
     it("should have 2 input(textBoxes) in contact us page",()=>{
 
@@ -19,5 +19,5 @@ describe("contact us page test cases",()=>{
         const inputBoxes = screen.getAllByRole("textbox");
 
         expect(inputBoxes.length).toBe(2)
-    })
+    });
 })
