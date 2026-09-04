@@ -40,10 +40,10 @@ const Body = ()=>{
     return (
         <div className="bg-gray-50 text-gray-900">
             <div className="flex justify-center">
-                <input type="text" className="w-96 m-3 p-1 rounded-xl border-2 border-black border-solid" value={searchValue} onChange={(e)=>{
+                <input data-testid="searchInput" type="text" className="w-96 m-3 p-1 rounded-xl border-2 border-black border-solid" value={searchValue} onChange={(e)=>{
                     setSearchvalue(e.target.value);
                 }}></input>
-                <button className="rounded-xl px-4 cursor-pointer bg-black text-white" onClick={()=>{
+                <button data-testid="search" className="rounded-xl px-4 cursor-pointer bg-black text-white" onClick={()=>{
                     const filteredRes = listOfRestaurants.filter((res)=>{
                         return res.info.name.toLowerCase().includes(searchValue.toLowerCase());
                     });
@@ -54,7 +54,7 @@ const Body = ()=>{
                 }}>Search</button>
             </div>
             <div className="flex justify-center">
-                <button className="m-4 rounded-xl p-2 text-white bg-black" onClick={()=>{
+                <button data-testid="topRatedBtn" className="m-4 rounded-xl p-2 text-white bg-black" onClick={()=>{
                     const filteredRes = listOfRestaurants.filter(
                         (res) => res.info.avgRating>4.3
                     );
